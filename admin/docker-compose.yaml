@@ -8,6 +8,10 @@ services:
             driver: json-file
         build:
             context: ${SERVICE_ADMIN:-.}
+            x-bake:
+                platforms:
+                    - linux/arm64
+                    - linux/amd64
         environment:
             - CLIENT_HOST=${CLIENT_HOST}
             - APP_ID=${ADMIN_APP_ID}

@@ -2,16 +2,17 @@ package conf
 
 import (
 	"fmt"
-	"github.com/GoAdminGroup/go-admin/modules/config"
-	"github.com/GoAdminGroup/go-admin/modules/language"
 	"net/url"
 	"os"
 	"strings"
 	"time"
+
+	"github.com/GoAdminGroup/go-admin/modules/config"
+	"github.com/GoAdminGroup/go-admin/modules/language"
 )
 
 func NewAppConf() config.Config {
-	appID, clientDomain, dbHost, gbajsDsn, adminDsn := getValuesFromEnv()
+	appID, _, dbHost, gbajsDsn, adminDsn := getValuesFromEnv()
 
 	return config.Config{
 		Env: config.EnvProd,
@@ -34,7 +35,6 @@ func NewAppConf() config.Config {
 			},
 		},
 		AppID:                appID,
-		Domain:               clientDomain,
 		UrlPrefix:            "admin",
 		Theme:                "sword",
 		Title:                "gbajs3-admin",

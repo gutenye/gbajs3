@@ -1,0 +1,22 @@
+#!/usr/bin/env script.js
+
+const HELP = `
+`
+
+app
+  .name(PROJECT_NAME)
+  .enableCompletion()
+  .addHelpText('after', HELP.trimEnd())
+
+app.command('build [service]')
+  .description('Build and publish docker images')
+  .action((service) => {
+    switch (service) {
+      case 'admin':
+        return $`docker buildx bake -f ./admin/docker-compose.yaml --push`
+      case 'webserver':
+        return $`docker buildx bake -f ./gbajs3/docker-compose.yaml --push`
+      default:
+        return $`docker buildx bake -f ./postgres/docker-compose.yaml -f ./auth/docker-compose.yaml -f ./admin/docker-compose.yaml -f ./gbajs3/docker-compose.yaml --push`
+    }
+  })

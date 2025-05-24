@@ -14,6 +14,15 @@
 
 <br/>
 
+## Changes from upstream
+
+```sh
+vi .env
+  CLIENT_HOST=.
+```
+
+
+
 This project is a Game Boy Advance emulator that is freely licensed and works in any modern browser without plugins.
 
 It began as a re-skin of the [gbajs2](https://github.com/andychase/gbajs2) fork by andychase, but now supports the [mGBA wasm](https://github.com/thenick775/mgba/tree/feature/wasm) core through the use of emscripten, for a feature rich user experience.

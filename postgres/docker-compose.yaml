@@ -10,6 +10,10 @@ services:
             context: ${SERVICE_POSTGRES:-.}
             args:
                 PG_DB_USER: ${PG_DB_USER}
+            x-bake:
+                platforms:
+                    - linux/arm64
+                    - linux/amd64                                        
         environment:
             POSTGRES_USER: ${PG_DB_USER}
             POSTGRES_PASSWORD: ${PG_DB_PASSWORD}
