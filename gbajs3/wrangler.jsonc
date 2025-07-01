@@ -1,0 +1,19 @@
+{
+	"$schema": "node_modules/wrangler/config-schema.json",
+	"name": "gba",
+	"compatibility_date": "2025-05-29",
+	"assets": {
+	  "directory": "./dist",
+	  "not_found_handling": "single-page-application"
+	},
+	"observability": {
+		"enabled": true
+	},
+  "routes": [
+    {
+      "pattern": "gba.guten.me",
+      "custom_domain": true
+    }
+  ],
+  "workers_dev": true
+}

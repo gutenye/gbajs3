@@ -12,7 +12,8 @@
     "preview": "vite preview",
     "build-watch": "tsc && vite build --watch",
     "test": "vitest",
-    "coverage": "vitest run --coverage"
+    "coverage": "vitest run --coverage",
+    "deploy": "bun run build && bun run wrangler deploy"
   },
   "dependencies": {
     "@emotion/react": "^11.11.1",
@@ -69,6 +70,7 @@
     "vite": "^6.0.1",
     "vite-plugin-html": "^3.2.2",
     "vite-plugin-pwa": "^1.0.0",
-    "vitest": "^3.0.2"
+    "vitest": "^3.0.2",
+    "wrangler": "^4.22.0"
   }
 }
